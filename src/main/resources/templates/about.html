@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/party.css}"/>
     <title>About pagina</title>
 </head>
 <body>
 <h1>About me</h1>
 <p>This is all about me...</p>
+<ol>
+    <li th:text="${name}">naam</li>
+    <li th:text="${street}">straat</li>
+    <li th:text="${city}">gemeente</li>
+</ol>
+
+<p><a th:href="@{/}">home</a></p>
 </body>
 </html>
