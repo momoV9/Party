@@ -23,4 +23,5 @@ public class HomeController {
         model.addAttribute("city", myCity);
         return "about";
     }
+
 }
