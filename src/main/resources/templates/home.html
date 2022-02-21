@@ -2,10 +2,28 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/party.css}" />
     <title>Homepagina</title>
 </head>
 <body>
-<h1>Homepagina</h1>
-<p th:text="${myCalculatedValue}">onbekend nummer</p>
+<div class="nav">
+    <h1>Let's Party!</h1>
+    <div class="navbuttons">
+        <a class="buttonLook menuButton" href="/home">home</a>
+        <a class="buttonLook menuButton" href="/venuedetails">venuedetails</a>
+        <a class="buttonLook menuButton" href="/about">about</a>
+    </div>
+</div>
+<div class="freespaceforheader"></div>
+<div class="row1">
+    <div class="row1content">
+        <div>
+            <h1>Homepagina</h1>
+            <p th:text="${myCalculatedValue}">onbekend nummer</p>
+
+            <p><a th:href="@{/about}">about</a></p>
+        </div>
+    </div>
+</div>
 </body>
 </html>

@@ -9,18 +9,13 @@
 <div th:replace="fragments/headerfooter :: header">header</div>
 <div class="row1">
     <div class="row1content">
-        <div>
-            <h1>About me</h1>
-            <p>This is all about me...</p>
-            <ol>
-                <li th:text="${name}">naam</li>
-                <li th:text="${street}">straat</li>
-                <li th:text="${city}">gemeente</li>
-            </ol>
-
-            <p th:text="|Ik ben ${name} en woon in ${street} te ${city}|"></p>
-
-            <p><a th:href="@{/}">home</a></p>
+        <h2>venues</h2>
+        <div class="venuelist">
+            <div th:each="venue: ${venues}">
+                <a class="buttonLook mediumButton" th:href="@{|/venuedetails/${venue.id}|}">
+                    <span th:text="${venue.venueName}">venue name</span>
+                </a>
+            </div>
         </div>
     </div>
 </div>
