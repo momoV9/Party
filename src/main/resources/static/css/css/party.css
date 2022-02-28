@@ -1,7 +1,7 @@
 body {
     background-color: #D0CFEC;
-    color: #0000FF;
-    font-family: Bahnschrift, "Arial Black";
+    color: #4c6c5d;
+    font-family: Bahnschrift, sans-serif;
     margin: 0;
 }
 
@@ -44,7 +44,13 @@ a {
 .row1 {
     display: flex;
     position: relative;
-    margin: 20px 0;
+    margin: 100px 0 20px 0;
+    min-height: 500px;
+}
+
+.row1 img {
+    width: 100%;
+    height: auto;
 }
 
 .row1content {

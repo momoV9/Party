@@ -6,23 +6,14 @@
     <title>About pagina</title>
 </head>
 <body>
-<div th:replace="fragments/headerfooter :: header">header</div>
+<div th:replace="fragments/headerfooter :: header">Hier komt de header</div>
 <div class="row1">
     <div class="row1content">
         <div>
             <h1>About me</h1>
-            <p>This is all about me...</p>
-            <ol>
-                <li th:text="${name}">naam</li>
-                <li th:text="${street}">straat</li>
-                <li th:text="${city}">gemeente</li>
-            </ol>
-
-            <p th:text="|Ik ben ${name} en woon in ${street} te ${city}|"></p>
-
-            <p><a th:href="@{/}">home</a></p>
         </div>
     </div>
 </div>
+<div th:replace="fragments/headerfooter :: footer">Hier komt de header</div>
 </body>
 </html>
