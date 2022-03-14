@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Collection;
 import java.util.Optional;
 
 @Controller
@@ -43,5 +45,15 @@ public class ArtistController {
             model.addAttribute("next", artistRepository.findFirstByOrderByIdAsc().get().getId());
         }
         return "artistdetails";
+    }
+    @GetMapping("artistlist/filter")
+    public String artistListWithFilter(Model model, @RequestParam(required = false) String keyword) {
+        Iterable<Artist> artists;
+        artists = artistRepository.findByKeyword(keyword);
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("artists", artists);
+        model.addAttribute("nrArtists", ((Collection<Artist>) artists).size());
+        model.addAttribute("showFilter", true);
+        return "artistlist";
     }
 }
