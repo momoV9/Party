@@ -1,26 +1,32 @@
-package be.thomasmore.party.model;
+package be.thomasmore.party2.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Artist {
     @Id
-    private int id;
+    private Integer id;
     private String artistName;
     private String linkMoreInfo;
     private String genre;
     @Column(length = 1000)
-    private String bio;
+    private String bio ;
     @Column(length = 1000)
     private String portfolio;
+    @ManyToMany(mappedBy = "artists", fetch = FetchType.LAZY)
+    private Collection<Party> parties;
 
     public Artist() {
+
     }
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getArtistName() {
@@ -61,5 +67,13 @@ public class Artist {
 
     public void setPortfolio(String portfolio) {
         this.portfolio = portfolio;
+    }
+
+    public Collection<Party> getParties() {
+        return parties;
+    }
+
+    public void setParties(Collection<Party> parties) {
+        this.parties = parties;
     }
 }

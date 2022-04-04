@@ -1,3 +1,4 @@
+--venue
 insert into VENUE (
     ID, VENUE_NAME, LINK_MORE_INFO, CAPACITY,
     FOOD_PROVIDED, INDOOR, OUTDOOR, FREE_PARKING_AVAILABLE,
@@ -95,7 +96,7 @@ values (
            12, 'Den Aalmoezenier', 'https://denaalmoezenier.weebly.com/',
            100, true, true, false, false, 'Antwerpen', 1);
 
-
+--artist
 INSERT INTO ARTIST (
     ID, ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO)
 VALUES (
@@ -180,3 +181,77 @@ VALUES (
 Dreamville, MnM Start to Dj Finalist Flowtrack Summer Camp Casa Blanca
 Festival Sunrise Festival Red ''n Blue Café Local Noxx Publik Vice Festival
 KdG TD ...');
+
+--party
+INSERT INTO PARTY
+(ID, NAME, PRICE_PRESALE_IN_EUR, PRICE_IN_EUR, EXTRA_INFO, DATE, DOORS,
+ VENUE_ID)
+VALUES
+    (nextval('PARTY_SEQ'), 'Big Spring Party', 6, 10, '1 cocktail included',
+     '2021-03-21', '10:00', 1);
+
+INSERT INTO PARTY
+(ID, name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
+ venue_Id)
+VALUES
+    (nextval('PARTY_SEQ'), 'Liberty 2021', 4, 6, 'free vestiaire, viplounge',
+     '2021-04-3', '22:00', 2);
+
+INSERT INTO PARTY
+(ID, name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
+ venue_Id)
+VALUES
+    (nextval('PARTY_SEQ'), 'Uppercuts', null, null, ' ',
+     '2021-03-14', '21:00', 4);
+
+INSERT INTO PARTY
+(ID, name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
+ venue_Id)
+VALUES
+    (nextval('PARTY_SEQ'), 'Zoetzuur', null, null, 'Zoete house / Zure techno',
+     '2021-03-21', '21:00', 4);
+
+INSERT INTO PARTY
+(ID, name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
+ venue_Id)
+VALUES
+    (nextval('PARTY_SEQ'), 'Oldies but Goldies', null, null, 'afterparty@home van THE BOX!',
+     '2020-03-28', '21:00', 4);
+
+INSERT INTO PARTY
+(ID, name, price_presale_in_eur, price_in_eur, extra_info, date, doors,
+ venue_Id)
+VALUES
+    (nextval('PARTY_SEQ'), 'Tommorowland', 325, 395, 'Zeker de echte tommorowland!',
+     '2022-04-01', '16:00', 12);
+
+--party artist
+INSERT INTO PARTY_ARTISTS (PARTIES_ID, ARTISTS_ID) VALUES (1, 1);
+INSERT INTO PARTY_ARTISTS (PARTIES_ID, ARTISTS_ID) VALUES (1, 2);
+INSERT INTO PARTY_ARTISTS (PARTIES_ID, ARTISTS_ID) VALUES (2, 2);
+INSERT INTO PARTY_ARTISTS (PARTIES_ID, ARTISTS_ID) VALUES (3, 3);
+INSERT INTO PARTY_ARTISTS (PARTIES_ID, ARTISTS_ID) VALUES (3, 5);
+INSERT INTO PARTY_ARTISTS (PARTIES_ID, ARTISTS_ID) VALUES (4, 5);
+
+--animal
+INSERT INTO ANIMAL (ID, NAME, CITY, BIO)
+VALUES (1, 'Gillende Giraf', 'Antwerpen', 'Zit al gans mijn levin in de zoo van Antwerpen :-(');
+
+INSERT INTO ANIMAL (ID, NAME, CITY, BIO)
+VALUES (2, 'De Olifant', 'Mechelen', 'Geboren en getogen Mechelenaar!');
+
+INSERT INTO ANIMAL (ID, NAME, CITY, BIO)
+VALUES (3, 'Dorstige Dromedaris', 'Mortsel', '');
+
+INSERT INTO ANIMAL (ID, NAME, CITY, BIO)
+VALUES (4, 'Dansende Draak', 'Lier', 'Van onder de Zimmertoren');
+
+--party animal
+INSERT INTO PARTY_ANIMALS (PARTIES_ID, ANIMALS_ID) VALUES (1, 1);
+INSERT INTO PARTY_ANIMALS (PARTIES_ID, ANIMALS_ID) VALUES (2, 1);
+INSERT INTO PARTY_ANIMALS (PARTIES_ID, ANIMALS_ID) VALUES (2, 3);
+INSERT INTO PARTY_ANIMALS (PARTIES_ID, ANIMALS_ID) VALUES (3, 3);
+INSERT INTO PARTY_ANIMALS (PARTIES_ID, ANIMALS_ID) VALUES (4, 3);
+INSERT INTO PARTY_ANIMALS (PARTIES_ID, ANIMALS_ID) VALUES (5, 3);
+INSERT INTO PARTY_ANIMALS (PARTIES_ID, ANIMALS_ID) VALUES (1, 4);
+INSERT INTO PARTY_ANIMALS (PARTIES_ID, ANIMALS_ID) VALUES (2, 4);
